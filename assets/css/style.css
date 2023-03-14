@@ -32,3 +32,14 @@ html,body{
 .purple:hover{
     background-color: #C697E2;
 }
+
+.carousel{
+    height: 12vh;
+    overflow: hidden;
+}
+
+.carousel-inner .carousel-item{
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
