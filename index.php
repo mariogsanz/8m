@@ -1,27 +1,74 @@
 <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if (isset($_POST['submit'])){
-            $opcion = $_POST['estudios'];
+$curso = '';
 
-            if (!empty($opcion)){
-                switch ($opcion) {
-                    case '1':
-                        header('Location: opcion1.php');
-                        break;
-                    case '2':
-                        header('Location: opcion2.php');
-                        break;
-                    case '3':
-                        header('Location: opcion3.php');
-                        break;
-                    
-                    default:
-                        header('Location: index.php');
-                        break;
-                }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['submit'])) {
+        $opcion = $_POST['estudios'];
+
+        if (!empty($opcion)) {
+            switch ($opcion) {
+                case '1':
+                    $curso = '<div class="mt-4">
+                Con tu nivel de estudios actual puedes acceder a lo siguiente:
+                <ul class="list-group mt-2">
+                    <a href="https://www.educa.jccm.es/es/edusecobl" class="list-group-item list-group-item-action" target="_blank">ESO</a>
+                </ul>
+            </div>';
+                    break;
+                case '2':
+                    $curso = '<div class="mt-4">
+                Con tu nivel de estudios actual puedes acceder a lo siguiente:
+                <ul class="list-group mt-2">
+                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Ciclos Formativos de Grado Medio</a>
+                </ul>
+            </div>';
+                    break;
+                case '3':
+                    $curso = '<div class="mt-4">
+                Con tu nivel de estudios actual puedes acceder a lo siguiente:
+                <ul class="list-group mt-2">
+                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Ciclos Formativos de Grado Medio</a>
+                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Ciclos Formativos de Grado Superior</a>
+                </ul>
+            </div>';
+                    break;
+                case '4':
+                    $curso = '<div class="mt-4">
+                Con tu nivel de estudios actual puedes acceder a lo siguiente:
+                <ul class="list-group mt-2">
+                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Ciclos Formativos de Grado Superior</a>
+                    <a href="https://www.educa.jccm.es/idiuniv/es/ensenanzas-universitarias" class="list-group-item list-group-item-action" target="_blank">Estudios Universitarios</a>
+                </ul>
+            </div>';
+                    break;
+                case '5':
+                    $curso = '<div class="mt-4">
+                Con tu nivel de estudios actual puedes acceder a lo siguiente:
+                <ul class="list-group mt-2">
+                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Ciclos Formativos de Grado Superior</a>
+                    <a href="https://www.educa.jccm.es/idiuniv/es/ensenanzas-universitarias" class="list-group-item list-group-item-action" target="_blank">Estudios universitarios con posibilidad de convalidación de créditos</a>
+                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Cursos de especialización de Formación Profesional</a>
+                </ul>
+            </div>';
+                    break;
+                case '6':
+                    $curso = '<div class="mt-4">
+                Con tu nivel de estudios actual puedes acceder a lo siguiente:
+                <ul class="list-group mt-2">
+                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Ciclos Formativos de Grado Medio</a>
+                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Ciclos Formativos de Grado Superior</a>
+                    <a href="https://www.educa.jccm.es/idiuniv/es/ensenanzas-universitarias" class="list-group-item list-group-item-action" target="_blank">Estudios universitarios con posibilidad de convalidación de créditos</a>
+                </ul>
+            </div>';
+                    break;
+
+                default:
+                    header('Location: index.php');
+                    break;
             }
         }
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -70,13 +117,17 @@
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="d-flex flex-column align-items-center">
                     <select name="estudios" id="estudios" class="form-select">
                         <option selected>Selecciona el nivel de estudios</option>
-                        <option value="1">Opcion 1</option>
-                        <option value="2">Opcion 2</option>
-                        <option value="3">Opcion 3</option>
+                        <option value="1">Ninguno</option>
+                        <option value="2">ESO - FP Básica</option>
+                        <option value="3">FP Medio</option>
+                        <option value="4">Bachillerato</option>
+                        <option value="5">FP Superior</option>
+                        <option value="6">Estudios universitarios</option>
                     </select>
                     <input name="submit" type="submit" value="Empieza ya!" class="btn purple mt-5">
                 </form>
             </div>
+            <?php echo $curso; ?>
         </div>
     </div>
 </body>
