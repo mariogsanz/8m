@@ -1,6 +1,4 @@
 <?php
-$curso = '';
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['submit'])) {
         $opcion = $_POST['estudios'];
@@ -8,58 +6,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($opcion)) {
             switch ($opcion) {
                 case '1':
-                    $curso = '<div class="mt-4">
-                Con tu nivel de estudios actual puedes acceder a lo siguiente:
-                <ul class="list-group mt-2">
-                    <a href="https://www.educa.jccm.es/es/edusecobl" class="list-group-item list-group-item-action" target="_blank">ESO</a>
-                </ul>
-            </div>';
+                    header('Location: noform.php');
                     break;
                 case '2':
-                    $curso = '<div class="mt-4">
-                Con tu nivel de estudios actual puedes acceder a lo siguiente:
-                <ul class="list-group mt-2">
-                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Ciclos Formativos de Grado Medio</a>
-                </ul>
-            </div>';
+                    header('Location: eso.php');
                     break;
                 case '3':
-                    $curso = '<div class="mt-4">
-                Con tu nivel de estudios actual puedes acceder a lo siguiente:
-                <ul class="list-group mt-2">
-                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Ciclos Formativos de Grado Medio</a>
-                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Ciclos Formativos de Grado Superior</a>
-                </ul>
-            </div>';
+                    header('Location: otros.php');
                     break;
                 case '4':
-                    $curso = '<div class="mt-4">
-                Con tu nivel de estudios actual puedes acceder a lo siguiente:
-                <ul class="list-group mt-2">
-                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Ciclos Formativos de Grado Superior</a>
-                    <a href="https://www.educa.jccm.es/idiuniv/es/ensenanzas-universitarias" class="list-group-item list-group-item-action" target="_blank">Estudios Universitarios</a>
-                </ul>
-            </div>';
-                    break;
-                case '5':
-                    $curso = '<div class="mt-4">
-                Con tu nivel de estudios actual puedes acceder a lo siguiente:
-                <ul class="list-group mt-2">
-                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Ciclos Formativos de Grado Superior</a>
-                    <a href="https://www.educa.jccm.es/idiuniv/es/ensenanzas-universitarias" class="list-group-item list-group-item-action" target="_blank">Estudios universitarios con posibilidad de convalidación de créditos</a>
-                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Cursos de especialización de Formación Profesional</a>
-                </ul>
-            </div>';
-                    break;
-                case '6':
-                    $curso = '<div class="mt-4">
-                Con tu nivel de estudios actual puedes acceder a lo siguiente:
-                <ul class="list-group mt-2">
-                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Ciclos Formativos de Grado Medio</a>
-                    <a href="https://www.educa.jccm.es/es/fpclm/estudios-formacion-profesional/estudios-ofertados-formacion-profesional/catalogo-titulos-formacion-profesional" class="list-group-item list-group-item-action" target="_blank">Ciclos Formativos de Grado Superior</a>
-                    <a href="https://www.educa.jccm.es/idiuniv/es/ensenanzas-universitarias" class="list-group-item list-group-item-action" target="_blank">Estudios universitarios con posibilidad de convalidación de créditos</a>
-                </ul>
-            </div>';
+                    header('Location: trabajo.php');
                     break;
 
                 default:
@@ -84,12 +40,66 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
     <div class="container-fluid h-100 d-flex flex-column align-items-center p-0">
         <div class="container-fluid red p-2 text-center">
-            <h1 class="display-4">Margaret</h1>
+            <h1 class="display-4">PROGRAMA MARGARET</h1>
+        </div>
+
+        <div class="description">
+            <p>"Te damos la bienvenida al programa Margaret. Nuestro objetivo es orientar hacia la formación en el ámbito cientifico-técnico a aquellas mujeres que desean acceder a puestos de trabajo con alta empleabilidad y oferta en el sector."
+            </p>
+        </div>
+
+        <div class="mt-4">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="d-flex flex-column align-items-center">
+                <select name="estudios" id="estudios" class="form-select">
+                    <option selected>Selecciona el nivel de estudios</option>
+                    <option value="1">Sin titulación</option>
+                    <option value="2">Estudios secundarios</option>
+                    <option value="3">Situacion vulnerable</option>
+                    <option value="4">Busqueda de trabajo</option>
+                </select>
+                <input name="submit" type="submit" value="Empieza ya!" class="btn purple mt-5">
+            </form>
+        </div>
+
+        <!-- galeria img -->
+        <div class="div_galeria">
+            <div class="img_gallery">
+
+                <p class="category_text">Solo 3 de cada 10 mujeres en el mundo estudian carreras relacionadas con la ciencia, la tecnología, la ingeniería y las matemáticas</p>
+                <img src="assets/css/pic1.jpeg" alt="foto1"></a>
+
+
+            </div>
+
+            <div class="img_gallery">
+                <p class="category_text">Según datos de la Comisión Europea, hasta el año 2030 será necesario cubrir más de 1,6 millones de puestos de trabajo en el ámbito de las TIC</p>
+                <img src="assets/css/pic2.jpeg" alt="foto2"></a>
+
+            </div>
+
+            <div class="img_gallery">
+                <p class="category_text">Incorporar a más mujeres en empleos digitales tendría un beneficio para la economía de hasta 16 billones de euros anuales para el PIB conjunto de la UE</p>
+                <img src="assets/css/pic3.jpg" alt="foto2"></a>
+
+            </div>
+
+            <div class="img_gallery">
+                <p class="category_text">El ámbito STEM se continúa percibiendo como eminentemente masculino.</p>
+                <img src="assets/css/pic4.png" alt="foto3"></a>
+
+            </div>
+
+        </div>
+        <div class="description">
+            <p>Según tu nivel de estudios o tu situación personal, te guiaremos hacia tu formación enfocada en el ámbito STEM. Así mismo, te proporcionaremos información si estás en situación de vulnerabilidad.
+            </p>
         </div>
         <div class="container-fluid flex-grow-1 peach d-flex flex-column align-items-center">
             <div id="carousel" class="carousel carousel-dark slide mt-4" data-bs-ride="carousel">
@@ -99,11 +109,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="5000">
-                        <h3>Solo el 13% de las programadoras son mujeres.</h3>
-                        <p>En 2025 cerca del 50% de los empleos estarán relacionados con la tecnología. Inés Vázquez y Rosario Ortiz afrontaron el problema creando Adalab, una empresa social diseñada para combatir la brecha de género tecnológica mediante la formación y la integración al mercado laboral. Han conseguido emplear al 94% de sus alumnas.</p>
+
+                        <p>En 2025 cerca del 50% de los empleos estarán relacionados con la tecnología. </p>
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
-                        <p>“En apenas cinco años, cerca del 50% de los empleos estarán relacionados con la tecnología. Si no nos metemos, vamos a estar fuera de la empleabilidad en el sector"</p>
+                        <p>Solo el 13% de las programadoras son mujeres.</p>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
@@ -113,23 +123,64 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <span class="carousel-control-next-icon"></span>
                 </button>
             </div>
-            <div class="mt-4">
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="d-flex flex-column align-items-center">
-                    <select name="estudios" id="estudios" class="form-select">
-                        <option selected>Selecciona el nivel de estudios</option>
-                        <option value="1">Ninguno</option>
-                        <option value="2">ESO - FP Básica</option>
-                        <option value="3">FP Medio</option>
-                        <option value="4">Bachillerato</option>
-                        <option value="5">FP Superior</option>
-                        <option value="6">Estudios universitarios</option>
-                    </select>
-                    <input name="submit" type="submit" value="Empieza ya!" class="btn purple mt-5">
-                </form>
-            </div>
-            <?php echo $curso; ?>
+
         </div>
     </div>
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>About</h6>
+                    <p class="text-justify">Este proyecto se ha llevado a cabo gracias a la iniciativa de la ONU, Objetivo Desarrollo Sostenible Nr 5 que apoya la igualdad de género.</p>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Categories</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">C</a></li>
+                        <li><a href="#">UI Design</a></li>
+                        <li><a href="#">PHP</a></li>
+                        <li><a href="#">Java</a></li>
+                        <li><a href="#">Android</a></li>
+                        <li><a href="#">Templates</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Contribute</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+                        <a href="#">IES Ribera del Tajo</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
 </body>
 
 </html>
